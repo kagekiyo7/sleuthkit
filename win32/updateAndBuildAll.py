@@ -18,7 +18,7 @@ from sys import platform as _platform
 import time
 import traceback
 
-MSBUILD_HOME = os.getenv("MSBUILD_HOME", r"C:\Program Files (x86)\Microsoft Visual Studio\2019\Enterprise\MSBuild\Current")
+MSBUILD_HOME = os.getenv("MSBUILD_HOME", "C:/Program Files (x86)/Microsoft Visual Studio/2019/Enterprise/MSBuild/Current")
 MSBUILD_PATH = os.path.normpath(MSBUILD_HOME+"/Bin/MSBuild.exe")
 
 CURRENT_PATH = os.getcwd()
