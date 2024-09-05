@@ -37,8 +37,7 @@ jobs:
 
     - name: set path2
       run: |
-        set PATH=C:\Python36-x64\';%PATH%
-
+        set PATH=C:\Python36-x64\;%PATH%
 
     - uses: nuget/setup-nuget@v2
       with:
