@@ -1,0 +1,53 @@
+name: Build Windows Binary
+on: [push, pull_request]
+
+jobs:
+  build:
+    runs-on: windows-latest
+
+    env:
+      # Path to the solution file relative to the root of the project.
+      SOLUTION_FILE_PATH: .
+    
+      # Configuration type to build.
+      # You can convert this to a build matrix if you need coverage of multiple configuration types.
+      # https://docs.github.com/actions/learn-github-actions/managing-complex-workflows#using-a-build-matrix
+      BUILD_CONFIGURATION: Release
+    
+    steps:
+    - uses: actions/checkout@v4
+  
+    - name: Add MSBuild to PATH
+      uses: microsoft/setup-msbuild@v1.0.2
+
+    - name: Choco1
+      uses: crazy-max/ghaction-chocolatey@v3
+      with:
+        args: install nuget.commandline
+
+    - name: Choco2
+      uses: crazy-max/ghaction-chocolatey@v3
+      with:
+        args: install ant --ignore-dependencies
+
+    - name: set path
+      shell: pwsh
+      run: |
+        $env:Path="C:\Program Files\Java\jdk1.8.0\bin;$($env:Path);C:\ProgramData\chocolatey\lib\ant"
+        set PATH=C:\Python36-x64\';%PATH%
+
+    - uses: nuget/setup-nuget@v2
+      with:
+        nuget-api-key: ${{ secrets.NuGetAPIKey }}
+        nuget-version: '5.x'
+    - run: nuget restore win32\libtsk -PackagesDirectory win32\packages
+
+    - name: run python
+      run: |
+        python win32\updateAndBuildAll.py -m
+  
+    - name: Upload binary
+      uses: actions/upload-artifact@v3
+      with:
+        name: sleuthkit
+        path: .
