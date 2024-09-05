@@ -20,7 +20,7 @@ jobs:
     - name: Add MSBuild to PATH
       uses: microsoft/setup-msbuild@v2
       with:
-          vs-version: '[14.0,14.1)'
+          vs-version: '[16.10,16.11)'
 
     - name: Choco1
       uses: crazy-max/ghaction-chocolatey@v3
