@@ -41,7 +41,7 @@ jobs:
       shell: cmd
       run: |
         set PATH=C:\Python36-x64\;%PATH%
-        set TSK_HOME=${{ GITHUB_WORKSPACE }}
+        set TSK_HOME=${{ env.GITHUB_WORKSPACE }}
         set
 
     - uses: nuget/setup-nuget@v2
