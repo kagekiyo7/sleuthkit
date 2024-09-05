@@ -41,6 +41,7 @@ jobs:
       shell: cmd
       run: |
         set PATH=C:\Python36-x64\;%PATH%
+        set
 
     - uses: nuget/setup-nuget@v2
       with:
