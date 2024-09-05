@@ -36,6 +36,7 @@ jobs:
         $env:Path="C:\Program Files\Java\jdk1.8.0\bin;$($env:Path);C:\ProgramData\chocolatey\lib\ant"
 
     - name: set path2
+      shell: cmd
       run: |
         set PATH=C:\Python36-x64\;%PATH%
 
