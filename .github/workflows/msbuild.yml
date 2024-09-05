@@ -34,7 +34,11 @@ jobs:
       shell: pwsh
       run: |
         $env:Path="C:\Program Files\Java\jdk1.8.0\bin;$($env:Path);C:\ProgramData\chocolatey\lib\ant"
-        set PATH='C:\Python36-x64\';%PATH%
+
+    - name: set path2
+      run: |
+        set PATH=C:\Python36-x64\';%PATH%
+
 
     - uses: nuget/setup-nuget@v2
       with:
