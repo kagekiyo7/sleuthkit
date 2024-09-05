@@ -20,7 +20,7 @@ import traceback
 
 # MSBUILD_HOME = os.getenv("MSBUILD_HOME", "C:/Program Files (x86)/Microsoft Visual Studio/2019/Community/MSBuild/Current")
 # MSBUILD_PATH = os.path.normpath(MSBUILD_HOME+"/Bin/MSBuild.exe")
-MSBUILD_PATH = os.getenv("msbuild")
+MSBUILD_PATH = os.path.normpath(os.getenv("msbuild"))
 
 CURRENT_PATH = os.getcwd()
 # save the build log in the output directory
