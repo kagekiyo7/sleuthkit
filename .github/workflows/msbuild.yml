@@ -8,8 +8,6 @@ jobs:
     env:
       # Path to the solution file relative to the root of the project.
       SOLUTION_FILE_PATH: .
-
-      TSK_HOME: ${{ env.GITHUB_WORKSPACE }}
     
       # Configuration type to build.
       # You can convert this to a build matrix if you need coverage of multiple configuration types.
@@ -43,6 +41,7 @@ jobs:
       shell: cmd
       run: |
         set PATH=C:\Python36-x64\;%PATH%
+        set TSK_HOME=${{ GITHUB_WORKSPACE }}
         set
 
     - uses: nuget/setup-nuget@v2
