@@ -15,6 +15,7 @@ jobs:
       BUILD_CONFIGURATION: Release
 
       TSK_HOME: ${{ github.workspace }}
+      JDK_HOME: ${{ JAVA_HOME_8_X64 }}
     
     steps:
     - uses: actions/checkout@v4
@@ -43,9 +44,6 @@ jobs:
       shell: cmd
       run: |
         set PATH=C:\Python36-x64\;%PATH%
-        set TSK_HOME=${{ github.workspace }}
-        set JDK_HOME=%JAVA_HOME_8_X64%
-        set
 
     - uses: nuget/setup-nuget@v2
       with:
