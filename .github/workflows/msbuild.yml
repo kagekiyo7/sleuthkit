@@ -14,7 +14,7 @@ jobs:
       # https://docs.github.com/actions/learn-github-actions/managing-complex-workflows#using-a-build-matrix
       BUILD_CONFIGURATION: Release
 
-      TESTTTTTT: aaaaaa
+      TSK_HOME: ${{ github.workspace }}
     
     steps:
     - uses: actions/checkout@v4
@@ -38,7 +38,6 @@ jobs:
       shell: pwsh
       run: |
         $env:Path="C:\Program Files\Java\jdk1.8.0\bin;$($env:Path);C:\ProgramData\chocolatey\lib\ant"
-        $env:TSK_HOME = "${{ github.workspace }}"
 
     - name: set path2
       shell: cmd
