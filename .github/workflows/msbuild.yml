@@ -54,6 +54,7 @@ jobs:
 
     - name: run python
       run: |
+        Get-ChildItem env:
         python win32\updateAndBuildAll.py -m
   
     - name: Upload binary
