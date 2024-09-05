@@ -15,7 +15,7 @@ jobs:
       BUILD_CONFIGURATION: Release
 
       TSK_HOME: ${{ github.workspace }}
-      JDK_HOME: ${{ JAVA_HOME_8_X64 }}
+      JDK_HOME: ${{ vars.JAVA_HOME_8_X64 }}
     
     steps:
     - uses: actions/checkout@v4
