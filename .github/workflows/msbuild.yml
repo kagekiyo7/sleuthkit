@@ -36,6 +36,7 @@ jobs:
       shell: pwsh
       run: |
         $env:Path="C:\Program Files\Java\jdk1.8.0\bin;$($env:Path);C:\ProgramData\chocolatey\lib\ant"
+        $env:TSK_HOME = ${{ github.workspace }}
 
     - name: set path2
       shell: cmd
@@ -43,6 +44,7 @@ jobs:
         set PATH=C:\Python36-x64\;%PATH%
         set TSK_HOME=${{ github.workspace }}
         set JDK_HOME=%JAVA_HOME_8_X64%
+        set
 
     - uses: nuget/setup-nuget@v2
       with:
