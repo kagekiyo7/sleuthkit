@@ -146,7 +146,7 @@ typedef enum {
 /*
  * Special File Objects for the YAFFS2 File system
  */
-#define YAFFS_OBJECT_ROOT 299
+#define YAFFS_OBJECT_ROOT 298
 #define YAFFS_OBJECT_FIRST 1
 #define YAFFS_OBJECT_LOSTNFOUND 2
 #define YAFFS_OBJECT_UNLINKED 3
